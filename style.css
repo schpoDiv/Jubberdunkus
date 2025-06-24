@@ -24,6 +24,7 @@ a:hover {
 	color: lightgreen !important;
 }
 
+/* INFO BAR */
 .infoBar {
 	display: flex;
 	flex-wrap: wrap;
@@ -39,8 +40,6 @@ a:hover {
 	text-align: center;
 	max-height: 150px;
 }
-
-/* INFO BAR CONTENTS */
 
 .welcome {
 	display: flex;
@@ -67,9 +66,9 @@ a:hover {
 	gap: 1rem;
 	cursor: pointer;
 }
+/* END OF INFO BAR */
 
-/* END OF INFO BAR CONTENTS */
-
+/* ARTISTS DROPDOWN */
 .dropdown {
 	display: inline-block;
   	position: relative;
@@ -107,6 +106,7 @@ a:hover {
 .dropdown.open .artistsContent {
 	display: block;
 }
+/* END OF ARTISTS DROPDOWN */
 
 .globeContainer {
 	display: flex;
@@ -122,7 +122,6 @@ a:hover {
 }
 
 /* RESPONSIVE BREAKPOINTS */
-
 /* Resolve dropdown anchoring issue for screens between 1230 and 1330px wide */
 @media (min-width: 1230px) and (max-width: 1330px) {
 	.dropdown {
@@ -213,5 +212,4 @@ a:hover {
 		max-width: 150;
 	}
 }
-
 /* END OF RESPONSIVE BREAKPOINTS */
