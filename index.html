@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jubberdunkus.com</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="infoBar">
+		<div class="about">
+			<a href="#">About</a>
+		</div>
+
+		<div class="welcome">
+			<h1>Welcome to Jubberdunkus</h1>
+		</div>
+
+		<div class="dropdown">
+			<a class="artists">Artists</a>
+			<div class="artistsContent">
+				<a href="#">Azereti</a>
+				<a href="#">Bachia 44</a>
+				<a href="#">Floodlights and Fools</a>
+				<a href="#">Jennifer What</a>
+				<a href="#">Kellen Murphy</a>
+				<a href="#">Meoon</a>
+				<a href="#">Moon Athyrium</a>
+				<a href="#">The Sun//ARAM</a>
+				<a href="#">Topiary Teahouse</a>
+				<a href="#">Wynorrific</a>
+				<a style="color:#050505;" href="#">LIL VISA SWEEZY</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="globeContainer">
+		<img src="globe.gif" class="globeImg" alt="Spinning globe animation">
+	</div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const dropdown = document.querySelector(".dropdown");
+			const artistsLink = dropdown.querySelector(".artists");
+
+			artistsLink.addEventListener("click", function (e) {
+				e.preventDefault();
+				dropdown.classList.toggle("open");
+			});
+
+			document.addEventListener("click", function (e) {
+				if (!dropdown.contains(e.target)) {
+					dropdown.classList.remove("open");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
