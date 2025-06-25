@@ -36,36 +36,31 @@ a:hover {
 }
 
 .infoBar > * {
-	flex: 1 1 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	flex: 2 2 150px;
 	text-align: center;
 	max-height: 150px;
 }
 
 .welcome {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	width: 100%;
 	max-width: 1000px;
 	white-space: nowrap;
-	gap: 1rem;
-}
-
-.about {
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	gap: 1rem;
 }
 
 .artists {
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
 	text-decoration: underline;
-	gap: 1rem;
 	cursor: pointer;
 }
+
+.about    { grid-area: about; }
+.vault    { grid-area: vault; }
+.welcome  { grid-area: welcome; }
+.events   { grid-area: events; }
+.dropdown { grid-area: artists; }
 /* END OF INFO BAR */
 
 /* ARTISTS DROPDOWN */
@@ -122,49 +117,30 @@ a:hover {
 }
 
 /* RESPONSIVE BREAKPOINTS */
-/* Resolve dropdown anchoring issue for screens between 1230 and 1330px wide */
-@media (min-width: 1230px) and (max-width: 1330px) {
-	.dropdown {
-		position: relative;
-	}
-
-	.dropdown .artistsContent {
-		left: auto;
-		right: 0;
-		transform: none;
-	}
-}
-
-/* Fix for infoBar wrapping issue */
+/* Small Laptops and Computers: 1232px and below */
 @media (max-width: 1232px) {
 	.infoBar {
-		flex-direction: column;
-		height: auto;
-		gap: 0.5rem;
+		display: grid;
+		grid-template-areas: 
+			"about vault"
+			"welcome welcome"
+			"events artists";
+		grid-template-columns: auto auto;
+		gap: 1rem;
+		justify-content: center;
+		width: 100%;
+		padding: 1rem;
+		box-sizing: border-box;
 	}
 
 	.infoBar > * {
-		flex: 0 1 auto;
-		max-height: none;
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
 	}
 
-	.about, .welcome {
-		height: 100px;
-		gap: 0.5rem;
-	}
-
-	.artists {
-		height: 50px;
-		gap: 0.5rem;
-	}
-}
-
-/* Tablets: 1024px and below */
-@media (max-width: 1024px) {
-	.infoBar {
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
+	.globeContainer {
+		padding: 2rem;
 	}
 }
 
@@ -202,14 +178,8 @@ a:hover {
 		font-size: 1.15rem;
 	}
 
-	.infoBar {
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
 	.globeImg {
-		max-width: 150;
+		max-width: 150px;
 	}
 }
 /* END OF RESPONSIVE BREAKPOINTS */
