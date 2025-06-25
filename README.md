@@ -19,5 +19,7 @@ Jubberdunkus is a record label located in and around Bellingham, Washington.  Th
 ## Authors and Acknowledgment
 
 Jubberdunkus Inc founded by Gabe Sodl
+
 Source code developed by Sean Dyer
+
 Special thanks to LIL VISA SWEEZY
